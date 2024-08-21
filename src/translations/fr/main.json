@@ -1,0 +1,50 @@
+{
+  "menu": {
+    "flights": "Vols",
+    "map": "Carte"
+  },
+  "home": {
+    "photosWarning": [
+      "Les photos d'avion présentées sur ce site proviennent de <2>Planespotters.net</2>. Les photographes conservent tous les droits sur ces images. Veuillez noter que :",
+      "Les photos peuvent ne pas être des représentations exactes du modèle, de la variante ou de la livrée de l'avion tels qu'ils apparaissent aujourd'hui.",
+      "Il peut y avoir des inexactitudes ou des erreurs dans les images.",
+      "Visitez <1>Planespotters.net</1> pour plus de détails."
+    ],
+    "grid": {
+      "missingPhoto": "Photo manquante",
+      "filters": {
+        "military": "Militaire"
+      },
+      "columns": {
+        "picture": "Image",
+        "flightId": "Identifiant du vol",
+        "createdAt": "Créé à",
+        "updatedAt": "Mis à jour à",
+        "registration": "Immatriculation",
+        "flight": "Vol",
+        "callsign": "Indicatif d'appel",
+        "origin": "Origine",
+        "destination": "Destination",
+        "divertedTo": "Dévié vers",
+        "model": "Modèle",
+        "icaoAddress": "Adresse OACI"
+      }
+    }
+  },
+  "map": {
+    "layers": {
+      "trackingBounds": "Tracer les bordures du suivi",
+      "heatmap": "Carte thermique",
+      "trails": "Traînées"
+    }
+  },
+  "components": {
+    "grid": {
+      "toolbar": {
+        "refreshButton": {
+          "title": "Rafraîchir"
+        }
+      }
+    }
+  }
+}

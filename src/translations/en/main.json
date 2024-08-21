@@ -1,0 +1,50 @@
+{
+  "menu": {
+    "flights": "Flights",
+    "map": "Map"
+  },
+  "home": {
+    "photosWarning": [
+      "The plane photos featured on this site are sourced from <2>Planespotters.net</2>. The photographers retain all rights to these images. Please be aware that:",
+      "The photos might not be exact representations of the aircraft's model, variant, or livery as they appear today.",
+      "There may be inaccuracies or errors in the images.",
+      "Visit <1>Planespotters.net</1> for more details."
+    ],
+    "grid": {
+      "missingPhoto": "Missing photo",
+      "filters": {
+        "military": "Military"
+      },
+      "columns": {
+        "picture": "Picture",
+        "flightId": "Flight id",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at",
+        "registration": "Registration",
+        "flight": "Flight",
+        "callsign": "Callsign",
+        "origin": "Origin",
+        "destination": "Destination",
+        "divertedTo": "Diverted to",
+        "model": "Model",
+        "icaoAddress": "ICAO address"
+      }
+    }
+  },
+  "map": {
+    "layers": {
+      "trackingBounds": "Draw tracking bounds",
+      "heatmap": "Heatmap",
+      "trails": "Trails"
+    }
+  },
+  "components": {
+    "grid": {
+      "toolbar": {
+        "refreshButton": {
+          "title": "Refresh"
+        }
+      }
+    }
+  }
+}
