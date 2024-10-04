@@ -7,31 +7,35 @@ import {
   Toolbar,
   Typography,
   AppBar,
-  type ContainerProps,
+  type BoxProps,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useRoute } from 'wouter';
 
 import ListItemLink from '@/components/List/ListItemLink';
-import { APP_TITLE } from '@/constants';
+import { APP_TITLE, DRAWER_WIDTH } from '@/constants';
 import menu from '@/menu';
 
 const PageRoot = styled(Box)(() => ({
   display: 'flex',
-  minHeight: '100vh',
-  boxSizing: 'border-box',
+  height: '100%',
 }));
 
-const PageContainerRoot = styled(Container)(() => ({
+const ContentRoot = styled(Box)(() => ({
   display: 'flex',
   flexDirection: 'column',
-  flex: 'auto',
   overflowX: 'auto',
+  width: '100%',
 }));
 
-interface PageContainerProps extends ContainerProps {}
+const MainContent = styled(Container)(({ theme }) => ({
+  flexGrow: 1,
+  overflowY: 'auto',
+  width: '100%', // https://mui.com/r/x-data-grid-no-dimensions
+  padding: theme.spacing(3),
+}));
 
-const drawerWidth = 240;
+interface PageContainerProps extends BoxProps {}
 
 function PageContainer({ children, ...props }: PageContainerProps) {
   const { t } = useTranslation();
@@ -57,10 +61,10 @@ function PageContainer({ children, ...props }: PageContainerProps) {
       <Drawer
         variant="permanent"
         sx={{
-          width: drawerWidth,
+          width: DRAWER_WIDTH,
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
+            width: DRAWER_WIDTH,
             boxSizing: 'border-box',
           },
         }}
@@ -86,10 +90,12 @@ function PageContainer({ children, ...props }: PageContainerProps) {
         </Box>
       </Drawer>
 
-      <PageContainerRoot maxWidth={false} tabIndex={-1} {...props}>
-        <Toolbar sx={{ marginBottom: '1rem' }} />
-        {children}
-      </PageContainerRoot>
+      <ContentRoot {...props}>
+        <Toolbar />
+        <MainContent maxWidth={false} tabIndex={-1}>
+          {children}
+        </MainContent>
+      </ContentRoot>
     </PageRoot>
   );
 }

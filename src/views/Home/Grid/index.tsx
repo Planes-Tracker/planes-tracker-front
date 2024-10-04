@@ -68,47 +68,45 @@ function FlightsGrid() {
   useSaveState(apiRef, STORAGE_KEY);
 
   return (
-    <Box sx={{ height: 600, width: '100%' }}>
-      <DataGrid
-        apiRef={apiRef}
-        getRowId={(row) => row.flightId}
-        rows={data?.items ?? []}
-        rowCount={rowCount}
-        columns={columns}
-        loading={isLoading || isFetching}
-        initialState={{
-          columns: {
-            columnVisibilityModel: {
-              flightId: false,
-              updatedAt: false,
-            },
+    <DataGrid
+      apiRef={apiRef}
+      getRowId={(row) => row.flightId}
+      rows={data?.items ?? []}
+      rowCount={rowCount}
+      columns={columns}
+      loading={isLoading || isFetching}
+      initialState={{
+        columns: {
+          columnVisibilityModel: {
+            flightId: false,
+            updatedAt: false,
           },
-        }}
-        slots={{
-          toolbar: CustomToolbar,
-        }}
-        slotProps={{
-          pagination: {
-            showFirstButton: true,
-            showLastButton: true,
-          },
-          toolbar: {
-            refetch: refetch as unknown as QueryActionCreatorResult<never>,
-          },
-        }}
-        getRowHeight={getAutoRowHeight}
-        pageSizeOptions={PAGE_SIZE_OPTIONS}
-        paginationMode="server"
-        paginationModel={paginationModel}
-        onPaginationModelChange={setPaginationModel}
-        sortingMode="server"
-        sortModel={gridSortModel}
-        onSortModelChange={handleSortModelChange}
-        disableRowSelectionOnClick
-        disableColumnFilter
-        disableColumnMenu
-      />
-    </Box>
+        },
+      }}
+      slots={{
+        toolbar: CustomToolbar,
+      }}
+      slotProps={{
+        pagination: {
+          showFirstButton: true,
+          showLastButton: true,
+        },
+        toolbar: {
+          refetch: refetch as unknown as QueryActionCreatorResult<never>,
+        },
+      }}
+      getRowHeight={getAutoRowHeight}
+      pageSizeOptions={PAGE_SIZE_OPTIONS}
+      paginationMode="server"
+      paginationModel={paginationModel}
+      onPaginationModelChange={setPaginationModel}
+      sortingMode="server"
+      sortModel={gridSortModel}
+      onSortModelChange={handleSortModelChange}
+      disableRowSelectionOnClick
+      disableColumnFilter
+      disableColumnMenu
+    />
   );
 }
 
